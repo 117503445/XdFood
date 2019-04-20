@@ -82,7 +82,8 @@ namespace XdFood_Student
             {
                 foreach (var dish in shop.Dishes)
                 {
-                    if (TbSearch.Text == ""||dish.Name.Contains(TbSearch.Text) || shop.Name.Contains(TbSearch.Text)) {
+                    if (TbSearch.Text == "" || dish.Name.Contains(TbSearch.Text) || shop.Name.Contains(TbSearch.Text))
+                    {
                         dishes.Add(new DgDish()
                         {
                             Name = dish.Name,
@@ -165,8 +166,6 @@ namespace XdFood_Student
             var i = Mouse.GetPosition(ImgBigMap);
             var x = i.X / ImgBigMap.ActualWidth;
             var y = i.Y / ImgBigMap.ActualHeight;
-            Console.WriteLine(x);
-            Console.WriteLine(y);
             if (x >= 0.4 && x <= 0.48 && y >= 0.03 && y <= 0.38)
             {
                 Console.WriteLine("新综");
@@ -195,11 +194,97 @@ namespace XdFood_Student
             {
                 Console.WriteLine("E楼");
             }
+            SelectVisibileGrid(GdMiniMap);
+            Cursor = Cursors.Arrow;
         }
 
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
             SetGdDishes();
+        }
+
+        private void ImgBigMap_MouseMove(object sender, MouseEventArgs e)
+        {
+            var i = Mouse.GetPosition(ImgBigMap);
+            var x = i.X / ImgBigMap.ActualWidth;
+            var y = i.Y / ImgBigMap.ActualHeight;
+            bool b = false;
+            if (x >= 0.4 && x <= 0.48 && y >= 0.03 && y <= 0.38)
+            {
+                b = true;
+            }
+            else if (x >= 0.55 && x <= 0.60 && y >= 0.02 && y <= 0.36)
+            {
+                b = true;
+            }
+            else if (x >= 0.16 && x <= 0.28 && y >= 0.08 && y <= 0.23)
+            {
+                b = true;
+            }
+            else if (x >= 0.2 && x <= 0.4 && y >= 0.42 && y <= 0.66)
+            {
+                b = true;
+            }
+            else if (x >= 0.07 && x <= 0.16 && y >= 0.62 && y <= 0.79)
+            {
+                b = true;
+            }
+            else if (x >= 0.7 && x <= 0.89 && y >= 0.09 && y <= 0.35)
+            {
+                b = true;
+            }
+            else if (x >= 0.47 && x <= 0.64 && y >= 0.47 && y <= 0.66)
+            {
+                b = true;
+            }
+            Cursor = b ? Cursors.Hand : Cursors.Arrow;
+        }
+
+        private void ImgMiniMap_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var i = Mouse.GetPosition(ImgMiniMap);
+            var x = i.X / ImgMiniMap.ActualWidth;
+            var y = i.Y / ImgMiniMap.ActualHeight;
+            Console.WriteLine(x); Console.WriteLine(y);
+            bool b = false;
+            if (x >= 0.35 && x <= 0.65 && y >= 0.68 && y <= 0.81)
+            {
+                b = true;
+            }
+            else if (x >= 0.26 && x <= 0.35 && y >= 0.37 && y <= 0.7)
+            {
+                b = true;
+            }
+            else if (x >= 0.64 && x <= 0.71 && x >= 0.51 && x <= 0.6)
+            {
+                b = true;
+            }
+            if (b)
+            {
+                SelectVisibileGrid(GdShop);
+                Cursor = Cursors.Arrow;
+            }
+        }
+
+        private void ImgMiniMap_MouseMove(object sender, MouseEventArgs e)
+        {
+            var i = Mouse.GetPosition(ImgMiniMap);
+            var x = i.X / ImgMiniMap.ActualWidth;
+            var y = i.Y / ImgMiniMap.ActualHeight;
+            bool b = false;
+            if (x >= 0.35 && x <= 0.65 && y >= 0.68 && y <= 0.81)
+            {
+                b = true;
+            }
+            else if (x >= 0.26 && x <= 0.35 && y >= 0.37 && y <= 0.7)
+            {
+                b = true;
+            }
+            else if (x >= 0.64 && x <= 0.71 && x >= 0.51 && x <= 0.6)
+            {
+                b = true;
+            }
+            Cursor = b ? Cursors.Hand : Cursors.Arrow;
         }
     }
 }

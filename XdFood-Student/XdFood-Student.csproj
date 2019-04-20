@@ -118,12 +118,22 @@
     <Resource Include="Resources\Top.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\2.png" />
     <Resource Include="Resources\3.png" />
-    <Resource Include="Resources\4.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\BigMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\MiniMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\chicken.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

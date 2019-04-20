@@ -80,13 +80,12 @@
             </Grid>
             <Grid Grid.Row="1">
                 <Grid Name="GdBigMap" d:IsHidden="True">
-                    <Image Name="ImgBigMap" Source="Resources/BigMap.png" Stretch="UniformToFill" MouseDown="ImgBigMap_MouseDown"></Image>
+                    <Image Name="ImgBigMap" Source="Resources/BigMap.png" Stretch="UniformToFill" MouseDown="ImgBigMap_MouseDown" MouseMove="ImgBigMap_MouseMove"></Image>
                 </Grid>
                 <Grid Name="GdMiniMap" d:IsHidden="True">
-                    <TextBlock>GdMiniMap</TextBlock>
-
+                    <Image Name="ImgMiniMap" Source="Resources/MiniMap.png" Stretch="UniformToFill" MouseDown="ImgMiniMap_MouseDown" MouseMove="ImgMiniMap_MouseMove" />
                 </Grid>
-                <Grid Name="GdShop" d:IsHidden="True">
+                <Grid Name="GdShop">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>
@@ -103,12 +102,13 @@
                                     <RowDefinition Height="2*"/>
                                     <RowDefinition Height="1*"/>
                                 </Grid.RowDefinitions>
-                                <Image Name="ImgShop" Grid.Row="0"/>
+                                <Image Name="ImgShop" Margin="0,10,0,0" Grid.Row="0" Source="Resources/chicken.png" />
                                 <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">黄焖鸡米饭 老综二楼北角</TextBlock>
                             </Grid>
 
 
-                            <DataGrid  Name="DgShopComments" AutoGenerateColumns="False" CanUserAddRows="False" GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="Column" FontSize="10" Height="Auto" FontWeight="Regular" Background="#FFFAFAFA" AlternationCount="2"  Grid.Column="1">
+                            <DataGrid  Name="DgShopComments" AutoGenerateColumns="False" CanUserAddRows="False" GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="Column" FontSize="10" Height="Auto" FontWeight="Regular" Background="#FFFAFAFA" AlternationCount="2"  Grid.Column="1"
+                                       Margin="10">
                                 <DataGrid.RowStyle>
                                     <Style TargetType="DataGridRow">
                                         <Setter Property="Height" Value="30" />
@@ -259,7 +259,7 @@
                         </DataGrid>
                     </Grid>
                 </Grid>
-                <Grid Name="GdDish">
+                <Grid Name="GdDish" d:IsHidden="True">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*"/>
                         <RowDefinition Height="4*"/>
