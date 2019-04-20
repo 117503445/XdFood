@@ -1,0 +1,24 @@
+﻿<Window x:Class="XdFood_Student.WdLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XdFood_Student"
+        mc:Ignorable="d"
+        Title="WdLogin" Height="329" Width="428"  MouseDown="Window_MouseDown" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" WindowStyle="None">
+    <Grid>
+        <Image Source="Resources/LoginBackGround.png"  ></Image>
+        <TextBlock Margin="0,75,0,0" Foreground="White" FontSize="30" HorizontalAlignment="Center" Height="50" Width="124" VerticalAlignment="Top">西电吃货</TextBlock>
+        <TextBox Name="Tbun" Width="194" Height="29" Margin="120,205,114,95"  VerticalContentAlignment="Center" Text="刘晓辉"/>
+        <PasswordBox Name="Pb" Width="194" Height="29" Margin="120,234,114,66"  VerticalContentAlignment="Center" Password="HelloWorld"/>
+        <Button Name="BtnLogin" Width="194" Height="29" Margin="120,280,114,20" Content="登录" Click="Button_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Border CornerRadius="10" Background="#00A3FF" >
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">登录</TextBlock>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+    </Grid>
+</Window>

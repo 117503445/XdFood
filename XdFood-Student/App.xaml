@@ -1,0 +1,9 @@
+﻿<Application x:Class="XdFood_Student.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:XdFood_Student"
+             StartupUri="WdLogin.xaml">
+    <Application.Resources>
+         
+    </Application.Resources>
+</Application>
