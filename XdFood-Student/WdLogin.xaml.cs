@@ -41,6 +41,7 @@ namespace XdFood_Student
             }
             else
             {
+                App.ID = jwt;
                 WdMain wdMain = new WdMain();
                 wdMain.Show();
                 Close();
