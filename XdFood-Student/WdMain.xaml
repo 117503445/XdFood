@@ -42,17 +42,17 @@
                     <ImageBrush ImageSource="Resources/Top.png" Stretch="UniformToFill" TileMode="Tile"/>
                 </Grid.Background>
                 <StackPanel Orientation="Horizontal" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Center">
-                    <Button Name="BtnMap" Margin="5" Width="32" Height="32" BorderThickness="0">
+                    <Button Name="BtnMap" Margin="5" Width="32" Height="32" BorderThickness="0" Click="BtnMap_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Resources/2.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Name="BtnDish" Margin="5" Width="32" Height="32" BorderThickness="0">
+                    <Button Name="BtnDish" Margin="5" Width="32" Height="32" BorderThickness="0" Click="BtnDish_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Resources/3.png"/>
                         </Button.Background>
                     </Button>
-                    <Button Name="BtnRecommand" Margin="5" Width="32" Height="32" BorderThickness="0">
+                    <Button Name="BtnRecommand" Margin="5" Width="32" Height="32" BorderThickness="0" Click="BtnRecommand_Click">
                         <Button.Background>
                             <ImageBrush ImageSource="Resources/4.png"/>
                         </Button.Background>
@@ -77,6 +77,13 @@
                     <Button Name="BtnMax" FontFamily="Segoe MDL2 Assets" FontSize="8" Content="&#xE922;" Click="BtnMax_Click" Style="{DynamicResource While}" Margin="5"/>
                     <Button Name="BtnClose" Content="✕" Click="BtnClose_Click" Style="{DynamicResource While}" Margin="5"/>
                 </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid Name="GdBigMap"></Grid>
+                <Grid Name="GdMiniMap"></Grid>
+                <Grid Name="GdShop"></Grid>
+                <Grid Name="GdDish"></Grid>
+                <Grid Name="GdRecommand"></Grid>
             </Grid>
         </Grid>
     </Grid>

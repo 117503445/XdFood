@@ -47,5 +47,20 @@ namespace XdFood_Student
         {
             Close();
         }
+
+        private void BtnMap_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void BtnDish_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnRecommand_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
