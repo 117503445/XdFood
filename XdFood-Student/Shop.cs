@@ -11,7 +11,8 @@ namespace XdFood_Student
         /// <summary>
         /// 店名
         /// </summary>
-        public string Name { get; set; }
+        public string Name { get; set; } = "";
+        public string Location { get; set; } = "";
         public List<Dish> Dishes { get; set; } = new List<Dish>();
 
         public List<Comment> Comments { get; set; } = new List<Comment>();

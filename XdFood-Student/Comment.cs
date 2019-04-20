@@ -11,7 +11,7 @@ namespace XdFood_Student
         /// <summary>
         /// 用户名
         /// </summary>
-        public string User { get; set; }
+        public string UserName { get; set; }
         /// <summary>
         /// 评论内容
         /// </summary>

@@ -10,7 +10,7 @@
         <Style x:Key="CustomTop" TargetType="{x:Type Window}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
-                    <WindowChrome UseAeroCaptionButtons="False" GlassFrameThickness="0" CaptionHeight="40"  />
+                    <WindowChrome UseAeroCaptionButtons="False" GlassFrameThickness="0" CaptionHeight="50"  />
                 </Setter.Value>
             </Setter>
             <Setter Property="Template">
@@ -34,7 +34,7 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
@@ -79,22 +79,191 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
-                <Grid Name="GdBigMap">
+                <Grid Name="GdBigMap" d:IsHidden="True">
                     <TextBlock>GdBigMap</TextBlock>
                 </Grid>
-                <Grid Name="GdMiniMap">
+                <Grid Name="GdMiniMap" d:IsHidden="True">
                     <TextBlock>GdMiniMap</TextBlock>
 
                 </Grid>
-                <Grid Name="GdShop">
-                    <TextBlock>GdShop</TextBlock>
+                <Grid Name="GdShop" d:IsHidden="True">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
 
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="1*"/>
+                                </Grid.RowDefinitions>
+                                <Image Name="ImgShop" Grid.Row="0"/>
+                                <TextBlock Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">黄焖鸡米饭 老综二楼北角</TextBlock>
+                            </Grid>
+
+
+                            <DataGrid  Name="DgShopComments" AutoGenerateColumns="False" CanUserAddRows="False" GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="Column" FontSize="10" Height="Auto" FontWeight="Regular" Background="#FFFAFAFA" AlternationCount="2"  Grid.Column="1">
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="DataGridRow">
+                                        <Setter Property="Height" Value="30" />
+                                        <Setter Property="FontSize" Value="15"/>
+                                        <Style.Triggers>
+                                            <!--隔行换色-->
+                                            <Trigger Property="AlternationIndex" Value="0" >
+                                                <Setter Property="Background" Value="#FFffffff" />
+                                            </Trigger>
+                                            <Trigger Property="AlternationIndex" Value="1" >
+                                                <Setter Property="Background" Value="#FFf7f7f7" />
+                                            </Trigger>
+
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="LightGray"/>
+                                                <!--<Setter Property="Foreground" Value="White"/>-->
+                                            </Trigger>
+
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="Foreground" Value="Black"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+
+
+                                <DataGrid.CellStyle>
+                                    <Style TargetType="DataGridCell">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter Property="BorderThickness" Value="0"/>
+                                                <Setter Property="Background" Value="White"/>
+                                                <Setter Property="Foreground" Value="Black"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="DataGridCell">
+                                                    <TextBlock TextAlignment="Center" VerticalAlignment="Center"  >
+                           <ContentPresenter />
+                                                    </TextBlock>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGrid.CellStyle>
+
+                                <DataGrid.ColumnHeaderStyle>
+                                    <Style TargetType="DataGridColumnHeader">
+                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                        <Setter Property="Height" Value="40"></Setter>
+                                        <Setter Property="Foreground" Value="#61669d"></Setter>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="DataGridColumnHeader">
+                                                    <Border Background="#f0f1f3">
+                                                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </DataGrid.ColumnHeaderStyle>
+
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Width="*" Header="UserName"  Binding="{Binding UserName}"/>
+                                    <DataGridTextColumn Width="4*" Header="评价"  Binding="{Binding Content}"/>
+
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </Grid>
+
+
+                        <DataGrid  Name="DgShop" AutoGenerateColumns="False" CanUserAddRows="False" GridLinesVisibility="None" BorderThickness="0" HeadersVisibility="Column" FontSize="10" Height="Auto" FontWeight="Regular" Background="#FFFAFAFA" AlternationCount="2"  Grid.Row="1">
+                            <DataGrid.RowStyle>
+                                <Style TargetType="DataGridRow">
+                                    <Setter Property="Height" Value="30" />
+                                    <Setter Property="FontSize" Value="15"/>
+                                    <Style.Triggers>
+                                        <!--隔行换色-->
+                                        <Trigger Property="AlternationIndex" Value="0" >
+                                            <Setter Property="Background" Value="#FFffffff" />
+                                        </Trigger>
+                                        <Trigger Property="AlternationIndex" Value="1" >
+                                            <Setter Property="Background" Value="#FFf7f7f7" />
+                                        </Trigger>
+
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="LightGray"/>
+                                            <!--<Setter Property="Foreground" Value="White"/>-->
+                                        </Trigger>
+
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+
+
+                            <DataGrid.CellStyle>
+                                <Style TargetType="DataGridCell">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="BorderThickness" Value="0"/>
+                                            <Setter Property="Background" Value="White"/>
+                                            <Setter Property="Foreground" Value="Black"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="DataGridCell">
+                                                <TextBlock TextAlignment="Center" VerticalAlignment="Center"  >
+                           <ContentPresenter />
+                                                </TextBlock>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGrid.CellStyle>
+
+                            <DataGrid.ColumnHeaderStyle>
+                                <Style TargetType="DataGridColumnHeader">
+                                    <Setter Property="Foreground" Value="Black"/>
+                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                    <Setter Property="Height" Value="40"></Setter>
+                                    <Setter Property="Foreground" Value="#61669d"></Setter>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="DataGridColumnHeader">
+                                                <Border Background="#f0f1f3">
+                                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </DataGrid.ColumnHeaderStyle>
+
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Width="*" Header="菜名"  Binding="{Binding Name}"/>
+                                <DataGridTextColumn Width="*" Header="价格"  Binding="{Binding Price}"/>
+                                <DataGridTextColumn Width="*" Header="评价"  Binding="{Binding Comment}"/>
+                                <DataGridTextColumn Width="*" Header="介绍"  Binding="{Binding Introduction}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
                 </Grid>
                 <Grid Name="GdDish">
                     <TextBlock>GdDish</TextBlock>
 
                 </Grid>
-                <Grid Name="GdRecommand">
+                <Grid Name="GdRecommand" d:IsHidden="True">
                     <DataGrid Name="DgRecommand" AutoGenerateColumns="False" CanUserAddRows="False" GridLinesVisibility="None" BorderThickness="0" Margin="41,21,41,21" HeadersVisibility="Column" FontSize="20" Height="Auto" FontWeight="Regular" Background="#FFFAFAFA" AlternationCount="2">
                         <DataGrid.RowStyle>
                             <Style TargetType="DataGridRow">
@@ -163,6 +332,7 @@
 
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" Header="菜名"  Binding="{Binding Name}"/>
+                            <DataGridTextColumn Width="*" Header="店名"  Binding="{Binding ShopName}"/>
                             <DataGridTextColumn Width="*" Header="价格"  Binding="{Binding Price}"/>
                             <DataGridTextColumn Width="*" Header="辣"  Binding="{Binding IsPungent}"/>
                             <DataGridTextColumn Width="*" Header="评价"  Binding="{Binding Comment}"/>

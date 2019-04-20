@@ -28,7 +28,8 @@ namespace XdFood_Student
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            SelectVisibileGrid(GdBigMap);
+            SelectVisibileGrid(GdShop);
+            SetDgShop("黄焖鸡米饭");
             SetGdRecommand();
         }
         #region 右上角按钮
@@ -88,6 +89,17 @@ namespace XdFood_Student
                 }
             }
         }
+        private void SetDgShop(string shopName)
+        {
+            foreach (var shop in Model.Shops)
+            {
+                if (shop.Name == shopName)
+                {
+                    DgShop.ItemsSource = shop.Dishes;
+                    DgShopComments.ItemsSource = shop.Comments;
+                }
+            }
+        }
         private void SetGdRecommand()
         {
             List<DgDish> dishes = new List<DgDish>();
@@ -101,7 +113,8 @@ namespace XdFood_Student
                         Price = dish.Price,
                         IsPungent = dish.IsPungent,
                         Comment = dish.Comments.OrderByDescending(s => s.StarNum).FirstOrDefault().Content,
-                        Introduction = dish.Introduction
+                        Introduction = dish.Introduction,
+                        ShopName = shop.Name
                     });
                 }
             }
@@ -110,7 +123,7 @@ namespace XdFood_Student
         }
         public class DgDish
         {
-            public string ShopName = "";
+            public string ShopName  { get; set; } = "";
             public string Name { get; set; } = "";
             public double Price { get; set; } = 0;
             /// <summary>
