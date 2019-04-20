@@ -43,19 +43,37 @@
                 </Grid.Background>
                 <StackPanel Orientation="Horizontal" WindowChrome.IsHitTestVisibleInChrome="True" HorizontalAlignment="Center">
                     <Button Name="BtnMap" Margin="5" Width="32" Height="32" BorderThickness="0" Click="BtnMap_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="Resources/2.png"/>
-                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <TextBlock>
+                                    <TextBlock.Background>
+                                        <ImageBrush ImageSource="Resources/2.png"/>
+                                    </TextBlock.Background>
+                                </TextBlock>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
                     <Button Name="BtnDish" Margin="5" Width="32" Height="32" BorderThickness="0" Click="BtnDish_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="Resources/3.png"/>
-                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <TextBlock>
+                                    <TextBlock.Background>
+                                        <ImageBrush ImageSource="Resources/3.png"/>
+                                    </TextBlock.Background>
+                                </TextBlock>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
                     <Button Name="BtnRecommand" Margin="5" Width="32" Height="32" BorderThickness="0" Click="BtnRecommand_Click">
-                        <Button.Background>
-                            <ImageBrush ImageSource="Resources/4.png"/>
-                        </Button.Background>
+                        <Button.Template>
+                            <ControlTemplate>
+                                <TextBlock>
+                                    <TextBlock.Background>
+                                        <ImageBrush ImageSource="Resources/4.png"/>
+                                    </TextBlock.Background>
+                                </TextBlock>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
                 </StackPanel>
 

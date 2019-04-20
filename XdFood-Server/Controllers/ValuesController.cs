@@ -12,9 +12,9 @@ namespace XdFood_Server.Controllers
     {
         // GET api/values
         [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        public ActionResult<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            return Newtonsoft.Json.JsonConvert.SerializeObject(Model.Shops);
         }
     }
 }

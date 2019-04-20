@@ -8,7 +8,7 @@
         Title="WdLogin" Height="329" Width="428"  MouseDown="Window_MouseDown" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Topmost="True" WindowStyle="None">
     <Grid>
         <Image Source="Resources/LoginBackGround.png"  ></Image>
-        <TextBlock Margin="0,75,0,0" Foreground="White" FontSize="30" HorizontalAlignment="Center" Height="50" Width="124" VerticalAlignment="Top">食在西电</TextBlock>
+        <TextBlock Margin="159,36,145,0" Foreground="White" FontSize="30" HorizontalAlignment="Center" Height="50" Width="124" VerticalAlignment="Top">食在西电</TextBlock>
         <TextBox Name="Tbun" Width="194" Height="29" Margin="120,205,114,95"  VerticalContentAlignment="Center" Text="刘晓辉"/>
         <PasswordBox Name="Pb" Width="194" Height="29" Margin="120,234,114,66"  VerticalContentAlignment="Center" Password="HelloWorld"/>
         <Button Name="BtnLogin" Width="194" Height="29" Margin="120,280,114,20" Content="登录" Click="Button_Click">
@@ -20,5 +20,10 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
+        <Ellipse HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="100" Margin="166,100,0,0">
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="Resources/1.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
     </Grid>
 </Window>

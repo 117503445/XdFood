@@ -17,7 +17,8 @@ namespace XdFood_Student
 
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            //string s=JsonConvert.SerializeObject(Model.Shops);
+            string s=JsonConvert.SerializeObject(Model.Shops);
+            Console.WriteLine(s);
             //Model.Shops = JsonConvert.DeserializeObject<List<Shop>>(s);
         }
     }

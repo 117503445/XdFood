@@ -22,7 +22,7 @@ namespace XdFood_Student
         public WdLogin()
         {
             InitializeComponent();
-#if true
+#if false
             Button_Click(null, null);
 #endif
         }
