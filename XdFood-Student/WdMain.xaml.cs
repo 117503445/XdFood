@@ -31,6 +31,7 @@ namespace XdFood_Student
             SelectVisibileGrid(GdBigMap);
             SetDgShop("黄焖鸡米饭");
             SetGdRecommand();
+            SetGdDishes();
         }
         #region 右上角按钮
         private void BtnMin_Click(object sender, RoutedEventArgs e)
@@ -74,7 +75,29 @@ namespace XdFood_Student
 
         }
         #endregion
-
+        private void SetGdDishes()
+        {
+            List<DgDish> dishes = new List<DgDish>();
+            foreach (var shop in Model.Shops)
+            {
+                foreach (var dish in shop.Dishes)
+                {
+                    if (TbSearch.Text == ""||dish.Name.Contains(TbSearch.Text) || shop.Name.Contains(TbSearch.Text)) {
+                        dishes.Add(new DgDish()
+                        {
+                            Name = dish.Name,
+                            Price = dish.Price,
+                            IsPungent = dish.IsPungent,
+                            Comment = dish.Comments.OrderByDescending(s => s.StarNum).FirstOrDefault().Content,
+                            Introduction = dish.Introduction,
+                            ShopName = shop.Name
+                        });
+                    }
+                }
+            }
+            Console.WriteLine();
+            DgDishes.ItemsSource = dishes;
+        }
         private void SelectVisibileGrid(Grid g)
         {
             foreach (var grid in grids)
@@ -123,7 +146,7 @@ namespace XdFood_Student
         }
         public class DgDish
         {
-            public string ShopName  { get; set; } = "";
+            public string ShopName { get; set; } = "";
             public string Name { get; set; } = "";
             public double Price { get; set; } = 0;
             /// <summary>
@@ -135,6 +158,48 @@ namespace XdFood_Student
             /// 介绍
             /// </summary>
             public string Introduction { get; set; }
+        }
+
+        private void ImgBigMap_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var i = Mouse.GetPosition(ImgBigMap);
+            var x = i.X / ImgBigMap.ActualWidth;
+            var y = i.Y / ImgBigMap.ActualHeight;
+            Console.WriteLine(x);
+            Console.WriteLine(y);
+            if (x >= 0.4 && x <= 0.48 && y >= 0.03 && y <= 0.38)
+            {
+                Console.WriteLine("新综");
+            }
+            else if (x >= 0.55 && x <= 0.60 && y >= 0.02 && y <= 0.36)
+            {
+                Console.WriteLine("老综");
+            }
+            else if (x >= 0.16 && x <= 0.28 && y >= 0.08 && y <= 0.23)
+            {
+                Console.WriteLine("海棠");
+            }
+            else if (x >= 0.2 && x <= 0.4 && y >= 0.42 && y <= 0.66)
+            {
+                Console.WriteLine("图书馆");
+            }
+            else if (x >= 0.07 && x <= 0.16 && y >= 0.62 && y <= 0.79)
+            {
+                Console.WriteLine("丁香");
+            }
+            else if (x >= 0.7 && x <= 0.89 && y >= 0.09 && y <= 0.35)
+            {
+                Console.WriteLine("竹园");
+            }
+            else if (x >= 0.47 && x <= 0.64 && y >= 0.47 && y <= 0.66)
+            {
+                Console.WriteLine("E楼");
+            }
+        }
+
+        private void BtnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            SetGdDishes();
         }
     }
 }
