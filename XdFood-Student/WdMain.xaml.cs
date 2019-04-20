@@ -28,7 +28,7 @@ namespace XdFood_Student
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            SelectVisibileGrid(GdShop);
+            SelectVisibileGrid(GdBigMap);
             SetDgShop("黄焖鸡米饭");
             SetGdRecommand();
         }

@@ -79,8 +79,11 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="1">
-                <Grid Name="GdBigMap" d:IsHidden="True">
-                    <TextBlock>GdBigMap</TextBlock>
+                <Grid Name="GdBigMap">
+                    <Canvas Name="CvBigMap">
+                        <Image Source="Resources/BigMap.png" Stretch="Fill" Height="{Binding ActualHeight, ElementName=CvBigMap, Mode=OneWay}" Width="{Binding ActualWidth, ElementName=CvBigMap, Mode=OneWay}" ></Image>
+
+                    </Canvas>
                 </Grid>
                 <Grid Name="GdMiniMap" d:IsHidden="True">
                     <TextBlock>GdMiniMap</TextBlock>
@@ -259,8 +262,8 @@
                         </DataGrid>
                     </Grid>
                 </Grid>
-                <Grid Name="GdDish">
-                    <TextBlock>GdDish</TextBlock>
+                <Grid Name="GdDish" d:IsHidden="True">
+                    <TextBlock d:IsHidden="True">GdDish</TextBlock>
 
                 </Grid>
                 <Grid Name="GdRecommand" d:IsHidden="True">

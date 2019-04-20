@@ -122,5 +122,8 @@
     <Resource Include="Resources\3.png" />
     <Resource Include="Resources\4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BigMap.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
