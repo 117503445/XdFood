@@ -272,7 +272,15 @@ namespace XdFood_Student
             var x = i.X / ImgMiniMap.ActualWidth;
             var y = i.Y / ImgMiniMap.ActualHeight;
             bool b = false;
-            if (x >= 0.4 && x <= 0.48 && y >= 0.03 && y <= 0.38)
+            if (x >= 0.35 && x <= 0.65 && y >= 0.68 && y <= 0.81)
+            {
+                b = true;
+            }
+            else if (x >= 0.26 && x <= 0.35 && y >= 0.37 && y <= 0.7)
+            {
+                b = true;
+            }
+            else if (x >= 0.64 && x <= 0.71 && x >= 0.51 && x <= 0.6)
             {
                 b = true;
             }

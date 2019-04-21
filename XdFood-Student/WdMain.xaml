@@ -10,7 +10,7 @@
         <Style x:Key="CustomTop" TargetType="{x:Type Window}">
             <Setter Property="WindowChrome.WindowChrome">
                 <Setter.Value>
-                    <WindowChrome UseAeroCaptionButtons="False" GlassFrameThickness="0" CaptionHeight="50"  />
+                    <WindowChrome UseAeroCaptionButtons="False" GlassFrameThickness="0" CaptionHeight="60"  />
                 </Setter.Value>
             </Setter>
             <Setter Property="Template">
@@ -34,7 +34,7 @@
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
@@ -100,10 +100,10 @@
                 <Grid Name="GdBigMap" d:IsHidden="True">
                     <Image Name="ImgBigMap" Source="Resources/BigMap.png" Stretch="UniformToFill" MouseDown="ImgBigMap_MouseDown" MouseMove="ImgBigMap_MouseMove"></Image>
                 </Grid>
-                <Grid Name="GdMiniMap" d:IsHidden="True">
+                <Grid Name="GdMiniMap">
                     <Image Name="ImgMiniMap" Source="Resources/MiniMap.png" Stretch="UniformToFill" MouseDown="ImgMiniMap_MouseDown" MouseMove="ImgMiniMap_MouseMove" />
                 </Grid>
-                <Grid Name="GdShop">
+                <Grid Name="GdShop" d:IsHidden="True">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="1*"/>

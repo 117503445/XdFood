@@ -21,10 +21,13 @@ namespace XdFood_Student
             },
             new Shop(){
                 Name="黄焖鸡米饭",
-                Dishes=new List<Dish>(){ new Dish() {Name="小米饭",Introduction="小米做的饭", Price=10.2,IsPungent=false,Comments=new List<Comment>() { new Comment() { Content="好",UserName="真香"} } }, new Dish() { Name = "烤肉", Introduction = "好吃的", Price = 20.2, IsPungent = false, Comments = new List<Comment>() { new Comment() { Content = "好", UserName = "真香" } } }
+                Dishes=new List<Dish>(){ new Dish() {Name="小米饭",Introduction="小米做的饭", Price=10.2,IsPungent=false,Comments=new List<Comment>() { new Comment() { Content="好",UserName= "包涵元" } } }, new Dish() { Name = "烤肉", Introduction = "好吃的", Price = 20.2, IsPungent = false, Comments = new List<Comment>() { new Comment() { Content = "真香", UserName = "葛洛华" } } }
                 },
                 Comments=new List<Comment>(){
-                   new Comment(){  Content = "好", UserName = "小王"}
+                   new Comment(){Content="吃的很饱",UserName="王云清"},
+                   new Comment(){Content = "这家店挺不错的", UserName = "罗怡"},
+                   new Comment(){Content="服务态度很好",UserName="葛洛华"},
+                   new Comment(){Content="地板脏",UserName="包涵元"}
                 }
             },
             new Shop(){
